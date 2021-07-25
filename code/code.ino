@@ -90,11 +90,11 @@ void send_location()
   
   update_gps();
   update_gps();
-  if (lon != 0.00) 
+  if (lon != 0.00 || lat !=0.00) 
  {
   sim.println("AT+CMGF=1"); // Configuring TEXT mode
-  updateSerial();
-  sim.println("AT+CMGS=\"+2348073476304\"");
+  updateSerial(); 
+  sim.println("AT+CMGS=\"+234---------\""); //replace with your number 
   updateSerial();
   msg = "PANIC_LOCATION: GPS = " + String(lon) + "," + String(lat) + " Copy to google map to see location!";
   msg = "PANIC_LOCATION: GPS = " + String(lon) + "," + String(lat) + " Copy to google map to see location!";
